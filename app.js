@@ -59,7 +59,7 @@ fs.createReadStream(csvFilePath)
       res.on('end', () => {
         const body = Buffer.concat(chunks);
         console.log('CSV file successfully processed');
-        console.log(body.toString());
+        console.log(`${JSON.parse(body).length} rows were uploaded`);
       });
     });
 
